@@ -1,0 +1,13 @@
++P 134217727
++Q 134217727
++A 1024
++K true
++W i
+-env ERL_MAX_ETS_TABLES 256000
+-env ERL_CRASH_DUMP /erl_crash.dump
+-env ERL_FULLSWEEP_AFTER 0
+-env ERL_MAX_PORTS 134217727
+-setcookie trading-api-dev-cookie
+-name VerneMQ@127.0.0.1
+-smp enable
++zdbbl 32768
