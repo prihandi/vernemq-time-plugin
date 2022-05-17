@@ -61,8 +61,6 @@ RUN ln -s /vernemq/etc /etc/vernemq && \
     ln -s /vernemq/data /var/lib/vernemq && \
     ln -s /vernemq/log /var/log/vernemq
 
-RUN tar -czf /vernemq-build/vernemq-time.tar /vernemq
-
 # Ports
 # 1883  MQTT
 # 8883  MQTT/SSL
