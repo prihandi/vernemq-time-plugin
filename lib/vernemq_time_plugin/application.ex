@@ -8,14 +8,12 @@ defmodule VerneMQTimePlugin.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      {Cluster.Supervisor, [topologies(), [name: VerneMQTimePlugin.ClusterSupervisor]]}
+      {Cluster.Supervisor, [topologies(), [name: VerneMQTimePlugin.ClusterSupervisor]]},
+      VerneMQTimePlugin.TimeServer
     ]
 
     opts = [strategy: :one_for_one, name: GlobalBackgroundJob.Supervisor]
-    res = Supervisor.start_link(children, opts)
-
-    VerneMQTimePlugin.TimeServer.start()
-    res
+    Supervisor.start_link(children, opts)
   end
 
   defp topologies do
